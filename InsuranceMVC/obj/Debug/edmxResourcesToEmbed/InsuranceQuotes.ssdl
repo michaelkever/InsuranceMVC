@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InsuranceQuoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'InsuranceQuote.dbo.QuoteInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="QuoteInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+    <Property Name="DateOfBirth" Type="varchar" MaxLength="50" />
+    <Property Name="CarYear" Type="varchar" MaxLength="50" />
+    <Property Name="CarMake" Type="varchar" MaxLength="50" />
+    <Property Name="CarModel" Type="varchar" MaxLength="50" />
+    <Property Name="Dui" Type="varchar" MaxLength="50" />
+    <Property Name="SpeedingTickets" Type="varchar" MaxLength="50" />
+    <Property Name="Coverage" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="InsuranceQuoteModelStoreContainer">
+    <EntitySet Name="QuoteInfo" EntityType="Self.QuoteInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [QuoteInfo].[Id] AS [Id], 
+    [QuoteInfo].[FirstName] AS [FirstName], 
+    [QuoteInfo].[LastName] AS [LastName], 
+    [QuoteInfo].[EmailAddress] AS [EmailAddress], 
+    [QuoteInfo].[DateOfBirth] AS [DateOfBirth], 
+    [QuoteInfo].[CarYear] AS [CarYear], 
+    [QuoteInfo].[CarMake] AS [CarMake], 
+    [QuoteInfo].[CarModel] AS [CarModel], 
+    [QuoteInfo].[Dui] AS [Dui], 
+    [QuoteInfo].[SpeedingTickets] AS [SpeedingTickets], 
+    [QuoteInfo].[Coverage] AS [Coverage]
+    FROM [dbo].[QuoteInfo] AS [QuoteInfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
